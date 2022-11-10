@@ -1,14 +1,11 @@
-import 'package:enhanced_enums_and_go_router/main.dart';
+import 'package:enhanced_enums_and_go_router/app.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    GoRouter.of(context).push(AppRoutes.home.path);
-    GoRouter.of(context).replace(AppRoutes.home.path);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
@@ -40,7 +37,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
-            onPressed: () => AppRoutes.settings.go(context),
+            onPressed: () => AppRoutes.settings.push(context),
           ),
         ],
       ),
@@ -49,7 +46,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-              onPressed: () => AppRoutes.login.push(context),
+              onPressed: () => AppRoutes.login.replace(context),
               child: const Text('Logout'),
             ),
           ],

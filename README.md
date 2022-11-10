@@ -1,16 +1,17 @@
 # enhanced_enums_and_go_router
 
-A new Flutter project.
+Running tests:
 
-## Getting Started
+```sh
+# To run all unit and widget tests use the following command:
+flutter test --coverage --test-randomize-ordering-seed random
 
-This project is a starting point for a Flutter application.
+# Generate Coverage Report
+genhtml coverage/lcov.info -o coverage/
 
-A few resources to get you started if this is your first Flutter project:
+# Open Coverage Report
+open coverage/index.html
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# All together
+flutter test --coverage --test-randomize-ordering-seed random && genhtml coverage/lcov.info -o coverage/ && open coverage/index.html
+```
